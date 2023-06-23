@@ -3,7 +3,77 @@
 @import 'reset';
 @import 'global';
 
-  
+.header {
+  padding: 60px 0;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: $default;
+  &__list {
+    display: flex;
+  }
+  &__item:not(:last-child) {
+    padding-right: 45px;
+  }
+  &__link {
+    color: $default;
+    transition: color 0.2s ease;
+  }
+  &__link:hover {
+    color: $accent;
+  }
+  &__link--active {
+    color: $accent;
+  }
+  &__link:focus {
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
+    border-radius: 5px;
+  }
+}
+
+.logo:focus {
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
+    border-radius: 5px;
+}
+
+.user-nav {
+  display: flex;
+  align-items: center;
+  padding-left: 63px;
+  &__link {
+    position: relative;
+  }
+  &__link:not(:last-child) {
+    margin-right: 35px;
+  }
+  &__num {
+    font-size: 10px;
+    color: #fff;
+    top: -5px;
+    right: -8px;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: $accent;
+    line-height: 1.5;
+  }
+}
+
+
+
+
+
+
 
 
 @import 'media';
