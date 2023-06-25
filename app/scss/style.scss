@@ -5,6 +5,7 @@
 
 .header {
   padding: 60px 0;
+
   &__wrapper {
     display: flex;
     align-items: center;
@@ -17,57 +18,307 @@
   align-items: center;
   font-size: 18px;
   color: $default;
+
   &__list {
     display: flex;
   }
+
   &__item:not(:last-child) {
     padding-right: 45px;
   }
+
   &__link {
     color: $default;
     transition: color 0.2s ease;
+
+    &:active {
+      text-shadow: 2px 2px 5px 0 rgba(49, 53, 43, 0.50);
+    }
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
+      border-radius: 5px;
+    }
   }
-  &__link:hover {
-    color: $accent;
-  }
+
   &__link--active {
     color: $accent;
   }
-  &__link:focus {
-    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
-    border-radius: 5px;
-  }
+
 }
 
 .logo:focus {
-    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
-    border-radius: 5px;
+  box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
+  border-radius: 5px;
+}
+
+.logo:active {
+  opacity: 0.5;
 }
 
 .user-nav {
   display: flex;
   align-items: center;
   padding-left: 63px;
+
   &__link {
     position: relative;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: background-color 0.2s ease, stroke 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 5px;
+
+    ellipse {
+      stroke: $title;
+    }
+
+    path {
+      stroke: $title;
+    }
+
+    &:hover {
+      background-color: $accent;
+
+      path {
+        stroke: #fff;
+      }
+
+      ellipse {
+        stroke: #fff;
+      }
+    }
+
+    &:focus {
+      background-color: $focus;
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
+    }
   }
+
   &__link:not(:last-child) {
-    margin-right: 35px;
+    margin-right: 10px;
   }
+
   &__num {
     font-size: 10px;
     color: #fff;
-    top: -5px;
-    right: -8px;
     position: absolute;
+    top: 6px;
+    right: 4px;
     width: 14px;
     height: 14px;
     border-radius: 50%;
     text-align: center;
     background-color: $accent;
     line-height: 1.5;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  &__link-bag {
+    &:hover {}
+  }
+
+  &:hover span.user-nav__num {
+    color: $accent;
+    background-color: #fff;
   }
 }
+
+.footer {
+  font-size: 18px;
+  border-bottom: 1px solid #C2C2C2;
+  padding-bottom: 60px;
+
+  &-top {
+    display: flex;
+
+    &__form {
+      margin-bottom: 12px;
+    }
+
+    &__link {
+      color: $default;
+      transition: color 0.2s ease;
+    }
+
+    &__link:hover {
+      color: $accent;
+    }
+
+    &__link:focus {
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
+      border-radius: 5px;
+    }
+  }
+
+  &-top__contact {
+    display: flex;
+  }
+
+  &__logo {
+    margin-bottom: 30px;
+    display: block;
+
+    &:focus {
+      box-shadow: 0 0 0 2px $accent;
+    }
+  }
+
+  &-top__form {
+    margin-top: 30px;
+  }
+}
+
+.contacts {
+  display: flex;
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    margin: 0 0 23px 7px;
+
+    & {
+      color: $default;
+      transition: color 0.2s ease;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
+      border-radius: 5px;
+    }
+  }
+}
+
+.subscribe {
+  width: 200px;
+  margin-right: 70px;
+
+  &__input {
+    font-size: 14px;
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: 5px;
+    border: 1px solid #C2C2C2;
+
+    &::placeholder {
+      opacity: 0.9;
+      color: #C2C2C2;
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+
+    &:hover::placeholder {
+      opacity: 1;
+      color: #000000;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 2px $accent;
+    }
+  }
+
+  &__button {
+    display: flex;
+    font-size: 14px;
+    padding: 13px 38px;
+    border-radius: 5px;
+
+    &-text {
+      padding-left: 15px;
+    }
+  }
+}
+
+.button {
+  color: $button;
+  background-color: $accent;
+  box-shadow: transparent;
+  transition: box-shadow 0.2s ease, color 0.2s ease, background-color 0.2s ease, fill 0.2s ease;
+
+  path {
+    fill: $button;
+  }
+
+  &:hover {
+    color: $accent;
+    background-color: transparent;
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
+
+    path {
+      fill: $accent;
+    }
+  }
+
+  &:focus {
+    color: $accent;
+    background-color: $focus;
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
+
+    path {
+      fill: $accent;
+    }
+  }
+}
+
+.footer-top__items {
+  margin-right: 70px;
+}
+
+.footer-top__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.networks {
+  display: flex;
+
+  &__link {
+    transition: fill 0.2s ease;
+
+    path {
+      fill: $default;
+    }
+
+    &:hover {
+      path {
+        fill: #fff;
+      }
+
+      circle {
+        fill: $accent;
+      }
+    }
+
+    &:focus {
+      circle {
+        fill: $focus;
+      }
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 13px;
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  padding: 30px 0;
+}
+
 
 
 
