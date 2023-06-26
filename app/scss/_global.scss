@@ -21,3 +21,22 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
+
+section  {
+  padding-bottom: 120px;
+}
+
+a {
+  color: $default;
+  transition: color 0.2s ease;
+}
+
+
+a:focus {
+  box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
+  border-radius: 5px;
+  
+  &:active {
+    text-shadow: 2px 2px 5px 0 rgba(49, 53, 43, 0.50);
+  }
+}
