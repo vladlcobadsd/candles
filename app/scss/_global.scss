@@ -5,7 +5,7 @@ body {
 
 body {
   @extend %rubik-400;
-  color: $default;
+  color: $dark;
   background-color: #F9FAFF;
   font-size: 20px;
   display: flex;
@@ -27,7 +27,7 @@ section  {
 }
 
 a {
-  color: $default;
+  color: $dark;
   transition: color 0.2s ease;
 }
 
@@ -39,4 +39,10 @@ a:focus {
   &:active {
     text-shadow: 2px 2px 5px 0 rgba(49, 53, 43, 0.50);
   }
+}
+
+.title {
+  font-size: 36px;
+  color: $darkBlue;
+  font-weight: 500;
 }

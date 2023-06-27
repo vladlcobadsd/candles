@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   font-size: 18px;
-  color: $default;
+  color: $dark;
 
   &__list {
     display: flex;
@@ -28,16 +28,16 @@
   }
 
   &__link {
-    color: $default;
+    color: $dark;
     transition: color 0.2s ease;
 
     &:hover {
-      color: $accent;
+      color: $orange;
     }
   }
 
   &__link--active {
-    color: $accent;
+    color: $orange;
   }
 
 }
@@ -54,7 +54,7 @@
 .user-nav {
   display: flex;
   align-items: center;
-  padding-left: 63px;
+  padding-left: 51px;
 
   &__link {
     position: relative;
@@ -68,15 +68,15 @@
     border-radius: 5px;
 
     ellipse {
-      stroke: $title;
+      stroke: $darkBlue;
     }
 
     path {
-      stroke: $title;
+      stroke: $darkBlue;
     }
 
     &:hover {
-      background-color: $accent;
+      background-color: $orange;
 
       path {
         stroke: #fff;
@@ -88,7 +88,7 @@
     }
 
     &:focus {
-      background-color: $focus;
+      background-color: $lightOrange;
       box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
     }
   }
@@ -107,44 +107,44 @@
     height: 14px;
     border-radius: 50%;
     text-align: center;
-    background-color: $accent;
+    background-color: $orange;
     line-height: 1.5;
     transition: background-color 0.2s ease, color 0.2s ease;
   }
 
   &:hover span.user-nav__num {
-    color: $accent;
+    color: $orange;
     background-color: #fff;
   }
 }
 
 .button {
-  color: $button;
-  background-color: $accent;
+  color: #fff;
+  background-color: $orange;
   box-shadow: transparent;
   transition: box-shadow 0.2s ease, color 0.2s ease, background-color 0.2s ease, fill 0.2s ease;
 
   path {
-    fill: $button;
+    fill: #fff;
   }
 
   &:hover {
-    color: $accent;
+    color: $orange;
     background-color: transparent;
     box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
 
     path {
-      fill: $accent;
+      fill: $orange;
     }
   }
 
   &:focus {
-    color: $accent;
-    background-color: $focus;
+    color: $orange;
+    background-color: $lightOrange;
     box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.70);
 
     path {
-      fill: $accent;
+      fill: $orange;
     }
   }
 
@@ -177,41 +177,162 @@
     border-radius: 6px;
     margin-right: 35px;
   }
-  
-  &__link {
-    color: $title;
-    display: inline-block;
-    border-bottom: 1px solid $title;
-    transition: border-bottom 0.2s ease;
 
-    &:hover {
-      color: $accent;
-      border-bottom: 1px solid transparent;
-    }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    font-size: 67px;
+    @extend %rubik-500;
+    color: $darkBlue;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    color: $orange;
   }
 }
 
-.title {
-  display: flex;
-  flex-direction: column;
-  font-size: 66px;
-  font-weight: 500;
-  color: $title;
-  line-height: 1.3;
-  margin-bottom: 20px;
+.link {
+  color: $darkBlue;
+  display: inline-block;
+  text-decoration: underline $darkBlue;
+  transition: text-decoration 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    color: $orange;
+    text-decoration: underline transparent;
+  }
 }
 
-.subtitle {
-  color: $accent;
+.categories {
+  &__wrapper {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 45px;
+
+    span {
+      padding-left: 10px;
+    }
+  }
+
+  &__button {
+    color: $darkBlue;
+    background-color: #fff;
+    box-shadow: 0px 0px 0px 1px #ECECEC;
+    padding: 13px 32px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &:focus {
+      background-color: #fff;
+      color: $darkBlue;
+
+      path {
+        fill: $darkBlue;
+      }
+    }
+
+    &:hover {
+      background-color: $lightOrange;
+
+      path {
+        fill: $orange;
+      }
+    }
+
+    &:active {
+      box-shadow: 0px -5px 12px 0px rgba(255, 104, 56, 0.20) inset;
+
+      path {
+        fill: $darkBlue;
+      }
+    }
+
+    path {
+      transition: fill 0.2s ease;
+      fill: $darkBlue;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(5, 1fr);
+    padding-bottom: 60px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px 15px;
+    box-shadow: 0px 0px 0px 1px #ECECEC;
+    border-radius: 5px;
+  }
+
+  &__img {
+    height: 140px;
+    width: 140px;
+    padding-bottom: 10px;
+  }
+
+  &__subtitle {
+    font-size: 15px;
+    @extend %rubik-400;
+    padding-bottom: 28px;
+  }
+
+  &__price {
+    font-size: 15px;
+    line-height: 1.4;
+    @extend %rubik-500;
+    padding-bottom: 10px;
+    color: $darkBlue;
+  }
+
+  &__item-btn {
+    font-size: 14px;
+    padding: 7px 16px;
+    border-radius: 6px;
+  }
 }
 
+.cheeseburger__subtitle {
+  padding-bottom: 10px;
+}
 
+.mixitup-control-active {
+  background-color: $orange;
+  color: #fff;
 
-
+  path {
+    fill: #fff;
+  }
+}
 
 .footer {
   font-size: 18px;
-  border-bottom: 1px solid #C2C2C2;
+  border-bottom: 1px solid $gray;
   padding-bottom: 60px;
 
   &-top {
@@ -230,12 +351,12 @@
     }
 
     &__link {
-      color: $default;
+      color: $dark;
       transition: color 0.2s ease;
     }
 
     &__link:hover {
-      color: $accent;
+      color: $orange;
     }
 
     &__link:focus {
@@ -253,7 +374,7 @@
     display: block;
 
     &:focus {
-      box-shadow: 0 0 0 2px $accent;
+      box-shadow: 0 0 0 2px $orange;
     }
   }
 
@@ -273,12 +394,12 @@
     margin: 0 0 23px 7px;
 
     & {
-      color: $default;
+      color: $dark;
       transition: color 0.2s ease;
     }
 
     &:hover {
-      color: $accent;
+      color: $orange;
     }
 
     &:focus {
@@ -297,20 +418,20 @@
     width: 100%;
     padding: 13px 15px;
     border-radius: 5px;
-    border: 1px solid #C2C2C2;
+    border: 1px solid $gray;
 
     &::placeholder {
       opacity: 0.9;
-      color: #C2C2C2;
+      color: $gray;
       transition: color 0.2s ease;
     }
 
     &:hover::placeholder {
-      color: #000000;
+      color: #000;
     }
 
     &:focus {
-      box-shadow: 0px 0px 0px 2px $accent;
+      box-shadow: 0px 0px 0px 2px $orange;
     }
   }
 
@@ -333,7 +454,7 @@
     transition: fill 0.2s ease;
 
     path {
-      fill: $default;
+      fill: $dark;
     }
 
     &:hover {
@@ -342,21 +463,21 @@
       }
 
       circle {
-        fill: $accent;
+        fill: $orange;
       }
     }
 
     &:focus {
       circle {
-        fill: $focus;
+        fill: $lightOrange;
       }
     }
 
     &:active {
-      background-color: $focus;
+      background-color: $lightOrange;
 
       path {
-        fill: $accent;
+        fill: $orange;
       }
     }
   }
