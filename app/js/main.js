@@ -1,6 +1,6 @@
-$(function(){
+const menuBtn = document.querySelector('.menu__btn');
+const menuMobile = document.querySelector('.header__menu-list');
 
-
-
-  var mixer = mixitup('.categories__wrapper');
-})
+menuBtn.addEventListener('click', ()=> {
+  menuMobile.classList.toggle('menu--open');
+});
